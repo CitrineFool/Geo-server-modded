@@ -219,7 +219,7 @@ General {
     # The type of AI to use for NPC Trainers in battle.  | 1: Choose moves randomly. 2: Choose the most damaging move possible (with type match-ups), ignoring status moves. 3: Use both offensive and status moves. 4: Use all moves intelligently and switch out when advantageous.
     battleAITrainer=3
     # The type of AI to use for wild Pokémon in battle.  | 1: Choose moves randomly. 2: Choose the most damaging move possible (with type match-ups), ignoring status moves. 3: Use both offensive and status moves.
-    battleAIWild=1
+    battleAIWild=3
     # Volume of the music that is played during battles.
     battleMusicVolume=1
     # Whether sleeping in a bed heals a player's Pokémon.
@@ -245,7 +245,7 @@ General {
     # Allow players to use cloning machines to clone Mew into Mewtwo.
     cloningMachineEnabled=true
     # Sets the amount of boxes players have in their PCs (capped at 256 per player).
-    computerBoxes=30
+    computerBoxes=45
     # If players party and computer are forcefully saved upon every world save (If false, you should be saving data via /saveall, or risk data loss)
     dataSaveOnWorldSave=true
     # Whether or not the "Drop All" button in the Pokémon drops screen will delete the items or drop them on the ground.
@@ -314,13 +314,13 @@ General {
     # Whether which battle gimmick can be used is determined purely by band chosen.
     relaxedBattleGimmickRules=true
     # Whether Legendary bird shrines can be used multiple times. 0 = Once, 1 = Once per player, 2 = Once per mc day, 3 = Once per day, 4 = Unlimited
-    shrineEncounterMode=0
+    shrineEncounterMode=1
     # Allow Legendary bird shrines to spawn randomly in the world.
     spawnBirdShrines=true
     # Allow Celebi shrines (Ilex Shrine) to spawn randomly in the world.
     spawnCelebiShrines=true
     # Allow random generation of structures such as Pokémon Centers, shrines, and other buildings if true.
-    spawnStructures=true
+    spawnStructures=false
     # If true, must be opped to use spawners. If false, must be in Creative mode.
     spawnersOpOnly=true
     # Lets you choose to give/not give a starter to a player on join (via the Pixelmon starter screen).
@@ -330,13 +330,13 @@ General {
     # The time taken before syncing to the system clock (in seconds).
     systemTimeSyncInterval=30
     # Set traders to one use (false) or multiple use (true).
-    tradersReusable=false
+    tradersReusable=true
     # Whether TMs, HMs, and TRs can be used regardless of generation if the Pokémon has it in their TM/HM/TR list somewhere.
     universalTMs=true
     # Whether to display a GUI with Pokémon drops after defeating a regular Pokémon.
-    useDropGUI=true
+    useDropGUI=false
     # Whether the system time is used for berry growth, meaning they will grow even when the game isn't running.
-    useSystemTimeForBerries=false
+    useSystemTimeForBerries=true
     # Lets your world follow real world time or not (uses the server's system clock).
     useSystemTimeForWorldTime=false
     # Whether to use the fix for clumping Pokémon around the edges of the world. If you are on Sponge, or don't know what it is, keep it off.
@@ -437,7 +437,7 @@ PokeLoot {
     # Allows invisible PokeChests to spawn around the world randomly.
     spawnHidden=true
     # Default spawn mode (FCFS=0, PL1D=1, PUD=2, TIMED=3). FCFS = First Come First Serve, only one player can loot chest, then chests vanishes. PL1D = Player 1 Drop, chest gives one drop per person. Chest remains for others to use once each. PUD = Player Unlimited Drops, chests can be used infinitely by all players. TIMED = Each player allowed to loot again after specified time interval (individual timers). Chest remains after looting.
-    spawnMode=0
+    spawnMode=2
     # Allows normal visible PokeChests to spawn around the world randomly.
     spawnNormal=true
     # Chest spawn rate. 0: 1 per 64 chunks. 1: 1 per 32 chunks. 2: 1 per 18 chunks. 3: 1 per 10 chunks
@@ -466,13 +466,13 @@ Quests {
 # Settings regarding Max Raid Dens.
 Raids {
     # Modifier of the den spawn chance if the den is going to spawn on liquid.
-    denAdditionalSpawnChanceOnLiquid=0.5
+    denAdditionalSpawnChanceOnLiquid=0.20000000298023224
     # Chance of a den respawning their boss when the den respawn time is hit
     denRespawnChance=0.25
     # Time of day when dens attempt to respawn their boss
     denRespawnTime=100
     # Chance of a den spawning per chunk
-    denSpawnChancePerChunk=0.029999999329447746
+    denSpawnChancePerChunk=0.003000000026077032
     # Number of item drops for each star level in raids
     denStarDrops=[
         2,
@@ -559,7 +559,7 @@ Riding {
     # Allows riding Pokémon mounts that do not have the ability to fly or surf.
     landMount=true
     # Requires flying and water Pokémon mounts to have HM moves Fly or Surf (respectively) to use those abilities when ridden.
-    requireHM=false
+    requireHM=true
     # Multipier for the speed that mounted Pokémon travel at.
     ridingSpeedMultiplier=1
 }
@@ -611,7 +611,7 @@ Spawning {
         75
     ]
     # The rate of boss Pokémon in the wild (1/x) not including mega bosses.
-    bossRate=256
+    bossRate=384
     # Chance that a mega boss spawn attempt will succeed (0-1)
     bossSpawnChance=0.30000001192092896
     # Average number of ticks before spawning a boss Pokémon
@@ -687,7 +687,7 @@ Spawning {
     # The maximum number of Flying Pokémon that can be naturally spawned in at once (soft limit). This does not count fishing, external moves, commands, or legendary spawning.
     maximumSpawnedFlyingPokemon=500
     # The maximum number of Flying Pokémon that can spawn per player. Lower for better performance.
-    maximumSpawnedFlyingPokemonPerPlayer=45
+    maximumSpawnedFlyingPokemonPerPlayer=35
     # The maximum number of Pokémon that can be naturally spawned in at once (soft limit). This does not count fishing, external moves, commands, or legendary spawning.
     maximumSpawnedPokemon=3000
     # Chance for a Meltan to spawn when smelting a metal ore block. 1/x
@@ -705,15 +705,15 @@ Spawning {
     # The number of spawn passes made per minute. Decrease for better performance.
     spawnFrequency=60
     # Sets spawning of Gyms in close proximity to newly generated towns on or off.
-    spawnGyms=true
+    spawnGyms=false
     # Sets whether or not Pokémon levels are determined by distance from the World's spawn point.
-    spawnLevelsByDistance=false
+    spawnLevelsByDistance=true
     # Whether or not wild Pokémon will have levels closer to the player's Pokémon. Note: This will effect the external jsons!
     spawnLevelsCloserToPlayerLevels=true
     # Whether or not wild Pokémon will spawn with higher levels underground.
     spawnLevelsIncreaseInCaves=true
     # Poke Marts will spawn with shopkeepers in Minecraft's towns.
-    spawnPokeMarts=true
+    spawnPokeMarts=false
     # A multiplier that speeds up legendary and mega boss spawning based on player count. ticks = spawnTicks / (1 + (number of players - 1) * spawnTicksPlayerMultiplier)
     spawnTicksPlayerMultiplier=0.009999999776482582
     # Allow Zygarde Cells to spawn randomly in the world.
@@ -765,7 +765,7 @@ Starters {
     # Whether starter Pokémon get the Destiny mark or not.
     starterMarks=true
     # Whether the starter list should be loaded from this config.
-    useCustomStarters=false
+    useCustomStarters=true
 }
 # Storage settings for party and computer data.
 Storage {
